@@ -1,0 +1,64 @@
+###
+POST http://localhost:9000/api/usuarios/crear/conhash HTTP/1.1
+Content-Type: application/json
+
+{
+    "userName": "aldair",
+    "password": "1234"
+}
+
+###
+GET http://localhost:9000/api/usuarios/consulta HTTP/1.1
+
+###
+POST http://localhost:9000/api/usuarios/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "userName": "aldair",
+    "password": "1234"
+}
+
+###
+POST http://localhost:9000/api/usuarios/validar HTTP/1.1
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjNhZTNmNGU0Yjc3ZDZhOWU4ODZhNGQiLCJ1c2VyTmFtZSI6ImFsZGFpciIsImlhdCI6MTcxNTEzNzAyMiwiZXhwIjoxNzE1MTQwNjIyfQ.nZkbresNDN2S8BIy-90ZZsOsKO-FmvQyr82h-m3RoDA"
+}
+
+###
+DELETE  http://localhost:9000/api/usuarios/elimina/653da35698f60c917ac7de74 HTTP/1.1
+
+
+//Scanner
+
+###
+POST http://localhost:9000/api/scanner/crear HTTP/1.1
+Content-Type: application/json
+
+{
+    "usuario": "Aldair",
+    "aditivo": "Aditivo1",
+    "contenedor": "Aditivo1",
+    "validacion": "Correcta",
+    "fecha": "2024-05-07"
+}
+
+###
+GET http://localhost:9000/api/scanner/consulta  HTTP/1.1
+
+###
+PUT http://localhost:9000/api/scanner/actualiza/663aeb98c13dce47776071ac HTTP/1.1
+Content-Type: application/json
+
+{
+    "usuario": "Aldair",
+    "aditivo": "Aditivo1",
+    "contenedor": "Aditivo2",
+    "validacion": "Incorrecta",
+    "fecha": "2024-05-07"
+}
+
+###
+DELETE  http://localhost:9000/api/scanner/elimina/663aea28771a0ce55e3f4615 HTTP/1.1
