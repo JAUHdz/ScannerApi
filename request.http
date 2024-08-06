@@ -8,7 +8,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:9000/api/usuarios/consulta HTTP/1.1
+GET http://localhost:9000/api/usu_usuarios/consulta HTTP/1.1
 
 ###
 POST http://localhost:9000/api/usuarios/login HTTP/1.1
@@ -62,3 +62,122 @@ Content-Type: application/json
 
 ###
 DELETE  http://localhost:9000/api/scanner/elimina/663aea28771a0ce55e3f4615 HTTP/1.1
+
+
+//REAL
+###
+POST http://localhost:9000/api/usu_cat_tipo/crear HTTP/1.1
+Content-Type: application/json
+
+{
+    "nom_tipo": "Operador",
+    "descripcion_tipo": "Usuario con permisos limitados"
+}
+
+###
+GET http://localhost:9000/api/usu_cat_tipo/consulta  HTTP/1.1
+
+###
+PUT http://localhost:9000/api/usu_cat_tipo/actualiza/668e0a6ae6563c40759279fc HTTP/1.1
+Content-Type: application/json
+
+{
+    "nom_tipo": "Administrador",
+    "descripcion_tipo": "Usuario con todos los permisos"
+}
+
+###
+DELETE  http://localhost:9000/api/usu_cat_tipo/elimina/668e0a6ae6563c40759279fc HTTP/1.1
+
+###
+POST http://localhost:9000/api/usu_cat_estado/crear HTTP/1.1
+Content-Type: application/json
+
+{
+    "nom_estado": "Suspendido",
+    "descripcion_estado": "Cuenta Temporalmente no Disponible"
+}
+
+###
+GET http://localhost:9000/api/usu_cat_estado/consulta  HTTP/1.1
+
+###
+PUT http://localhost:9000/api/usu_cat_estado/actualiza/668e0eb6a7c8ad3ab98a6d2b HTTP/1.1
+Content-Type: application/json
+
+{
+    "nom_estado": "Activo",
+    "descripcion_estado": "Usuario con todos los permisos"
+}
+
+###
+DELETE  http://localhost:9000/api/usu_cat_estado/elimina/668e0eb6a7c8ad3ab98a6d2b HTTP/1.1
+
+
+###
+POST http://localhost:9000/api/usu_usuarios/crear HTTP/1.1
+Content-Type: application/json
+
+{
+    "nom_usuario": "admin",
+    "contrasena": "2004",
+    "usucatestado": "Activo",
+    "usucattipo": "Operador"
+}
+
+###
+GET http://localhost:9000/api/usu_usuarios/consulta  HTTP/1.1
+
+###
+GET http://localhost:9000/api/usu_usuarios/consulta/668e1bec27dc480489862373  HTTP/1.1
+
+###
+GET http://localhost:9000/api//usu_usuarios/consulta/nombre/Alda HTTP/1.1
+
+###
+PUT http://localhost:9000/api/usu_usuarios/actualiza/668e13d09a67ee3ae310e266 HTTP/1.1
+Content-Type: application/json
+
+{
+    "nom_usuario": "Ald",
+    "contrasena": "Cuenta Temporalmente no Disponible",
+    "usucatestado": "Cuenta Temporalmente no Disponible",
+    "usucattipo": "Cuenta Temporalmente no Disponible"
+}
+
+###
+DELETE  http://localhost:9000/api/usu_usuarios/elimina/668e13d09a67ee3ae310e266 HTTP/1.1
+
+
+###
+POST http://localhost:9000/api/cat_aditivos/crear HTTP/1.1
+Content-Type: application/json
+
+{
+    "nom_aditivo": "Aditivo1",
+    "nom_contenedor": "Aditivo1",
+    "descripcion_aditivo": "Liquido",
+    "validacion": "correcta",
+    "fecha": "2004-01-10",
+    "localizacion": "Tula",
+    "usuusuario": "Alda"
+}
+
+###
+GET http://localhost:9000/api/cat_aditivos/consulta  HTTP/1.1
+
+###
+PUT http://localhost:9000/api/cat_aditivos/actualiza/668e17a5c519b253417186bf HTTP/1.1
+Content-Type: application/json
+
+{
+     "nom_aditivo": "Aditivo1",
+    "nom_contenedor": "2004",
+    "descripcion_aditivo": "Activo",
+    "validacion": "Administrador",
+    "fecha": "Administrador",
+    "localizacion": "Administrador"
+}
+
+###
+DELETE  http://localhost:9000/api/cat_aditivos/elimina/668e17a5c519b253417186bf HTTP/1.1
